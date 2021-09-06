@@ -45,7 +45,7 @@ def move():
     #after the loop, stops the robot
     vel_msg.linear.x = 0
     #force the robot to stop
-    velocity publisher.publish(vel_msg)
+    velocity_publisher.publish(vel_msg)
 
 if _name_ == '_main_':
     try:

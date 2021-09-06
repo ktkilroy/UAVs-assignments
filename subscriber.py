@@ -1,18 +1,18 @@
 import rospy
 from std_msgs.msg import String
 
-def talker():
-    pub = rospy.Publisher('chatter', String, queue_size=10)
-    rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
-    while not rospy.is_shutdown():
-        directions = "Turltle 1 says %s" % rospy.get_time()
-        rospy.loginfo(directions)
-        pub.publish(directions)
-        rate.sleep()
+def callback(data):
+    rospy.loginfo("RECIEVED DATA: %s", data.data)
+
+def listener():
+    rospy.init_node("subscriber_node", anonymous = True)
+    rospy.Subscriber('robot_cleaner', String, callback)
+    rospy.spin()
+    velocity = Twist()
+    velocity = data.data
 
 if __name__ == '__main__':
     try:
-        talker()
+        listener()
     except rospy.ROSInterruptException:
         pass
