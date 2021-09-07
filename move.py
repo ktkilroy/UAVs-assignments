@@ -47,7 +47,7 @@ def move():
     #force the robot to stop
     velocity_publisher.publish(vel_msg)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     try:
         #testing our function
         move()
