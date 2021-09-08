@@ -21,23 +21,6 @@ def listener():
 if __name__ == '__main__':
     try:
         listener()
+        move()
     except rospy.ROSInterruptException:
         pass
-
-publisher
-
-
-callback fun name moverturtle2
-have a log here
-want to publish to T2 
-
-
-        listner 
-        sub
-
-        callback
-
-        need to send over /cmd/vel
-        twist
-
-turtle 1 moves with teleop
